@@ -1,2 +1,0 @@
-# DogsSagasExrecice
-Created with CodeSandbox
