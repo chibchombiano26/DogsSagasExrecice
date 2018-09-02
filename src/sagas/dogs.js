@@ -1,4 +1,4 @@
-import { takeLatest, call, put } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga-effects";
 import {
   API_CALL_REQUEST,
   API_CALL_SUCCESS,
@@ -9,7 +9,7 @@ export function* watcherSaga() {
   yield takeLatest(API_CALL_REQUEST, workerDogs);
 }
 
-function* workerDogs() {
+export function* workerDogs() {
   try {
     const response = yield call(
       fetch,

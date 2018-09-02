@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { API_CALL_REQUEST } from "../actions/dogs";
+import { TitleComponent } from "../components/index";
 
 class DogList extends Component {
   render() {
@@ -9,7 +10,7 @@ class DogList extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Dog Saga</h1>
+          <TitleComponent title="Welcome to Dog Saga" />
           <img src={dog.message} className="App-logo" alt="logo" />
         </header>
 
@@ -31,11 +32,11 @@ class DogList extends Component {
   }
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
-    fetching: state.fetching,
-    dog: state.dog,
-    error: state.error
+    fetching: state.dog.fetching,
+    dog: state.dog.dog,
+    error: state.dog.error
   };
 };
 
