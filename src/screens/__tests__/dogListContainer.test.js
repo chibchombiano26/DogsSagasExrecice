@@ -3,8 +3,8 @@ import renderer from "react-test-renderer";
 import React from "react";
 import delay from "redux-saga";
 import { Provider } from "react-redux";
-import store from "../store";
-import DogList from "./dogsList";
+import store from "../../store";
+import DogList from "../dogsList";
 
 describe("Container viewver", () => {
   it("Show correct text", () => {

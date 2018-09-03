@@ -1,4 +1,4 @@
-import { mapStateToProps } from "./dogsList";
+import { mapStateToProps } from "../dogsList";
 
 describe("Testing map state to props", () => {
   it("should map the state correctly", () => {

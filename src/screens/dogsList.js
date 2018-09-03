@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { API_CALL_REQUEST } from "../actions/dogs";
-import { TitleComponent } from "../components/index";
+import { TitleComponent, RequestDog } from "../components/index";
 
 class DogList extends Component {
   render() {
@@ -20,11 +21,12 @@ class DogList extends Component {
           <p className="App-intro">Replace the React icon with a dog!</p>
         )}
 
-        {fetching ? (
-          <button disabled>Fetching...</button>
-        ) : (
-          <button onClick={onRequestDog}>Request a Dog</button>
-        )}
+        <RequestDog
+          isfetching={fetching}
+          action={onRequestDog}
+          fetchingText="Fetching..."
+          text="Request a Dog"
+        />
 
         {error && <p style={{ color: "red" }}>Uh oh - something went wrong!</p>}
       </div>
@@ -53,3 +55,9 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(DogList);
+
+DogList.propTypes = {
+  fetching: PropTypes.bool,
+  dog: PropTypes.object,
+  error: PropTypes.string
+};
